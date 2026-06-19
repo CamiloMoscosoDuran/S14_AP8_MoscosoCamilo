@@ -1,0 +1,238 @@
+.contacto-page {
+  background: #0a0a0f;
+  min-height: 100%;
+  padding-bottom: 60px;
+}
+
+/* PAGE HEADER */
+.page-header {
+  background: linear-gradient(135deg, #13132a, #1e1e3a);
+  padding: 60px 80px 40px;
+  border-bottom: 1px solid #2a2a4a;
+}
+
+.page-title {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 3rem;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: 3px;
+  margin-bottom: 10px;
+}
+
+.page-subtitle {
+  color: #7070a0;
+  font-size: 1.1rem;
+}
+
+/* LAYOUT */
+.contacto-layout {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 40px;
+  padding: 50px 80px;
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+/* FORMULARIO */
+.form-section {
+  background: #13132a !important;
+  border: 1px solid #2a2a4a !important;
+  border-radius: 20px;
+  padding: 40px;
+}
+
+.form-title {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #e0e0f0;
+  letter-spacing: 1px;
+  margin-bottom: 28px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid #2a2a4a;
+}
+
+.contacto-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-group label {
+  color: #9090c0;
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.form-input {
+  background: #0d0d1a !important;
+  border: 1px solid #2a2a4a;
+  border-radius: 10px;
+  padding: 13px 16px;
+  color: #e0e0f0 !important;
+  font-family: 'Exo 2', sans-serif;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+  outline: none;
+}
+
+.form-input:focus {
+  border-color: #7c3aed;
+  box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.15);
+}
+
+.form-input::placeholder {
+  color: #3a3a6a;
+}
+
+.form-select {
+  cursor: pointer;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%237c3aed' d='M6 8L0 0h12z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 16px center;
+}
+
+.form-select option {
+  background: #13132a;
+}
+
+.form-textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.btn-enviar {
+  background: linear-gradient(135deg, #7c3aed, #5b21b6) !important;
+  color: #ffffff !important;
+  border: none;
+  padding: 15px 32px;
+  border-radius: 10px;
+  font-family: 'Exo 2', sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 20px rgba(124, 58, 237, 0.4);
+  margin-top: 6px;
+}
+
+.btn-enviar:hover {
+  background: linear-gradient(135deg, #8b5cf6, #7c3aed) !important;
+  box-shadow: 0 6px 28px rgba(124, 58, 237, 0.6);
+  transform: translateY(-2px);
+}
+
+/* INFO SECTION */
+.info-section {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.info-title {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #e0e0f0;
+  letter-spacing: 1px;
+  margin-bottom: 4px;
+}
+
+.info-card {
+  background: #13132a !important;
+  border: 1px solid #2a2a4a;
+  border-radius: 14px;
+  padding: 18px 20px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.info-card:hover {
+  border-color: #7c3aed;
+  box-shadow: 0 4px 16px rgba(124, 58, 237, 0.2);
+  transform: translateX(4px);
+}
+
+.info-icon {
+  font-size: 1.8rem;
+  min-width: 40px;
+  text-align: center;
+}
+
+.info-card strong {
+  display: block;
+  color: #c0c0e0;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  margin-bottom: 3px;
+}
+
+.info-card p {
+  color: #6060a0;
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+/* HORARIO */
+.horario-box {
+  background: linear-gradient(135deg, #1a0a2e, #0a1a2e) !important;
+  border: 1px solid #3a1a5e;
+  border-radius: 14px;
+  padding: 24px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.horario-box::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #7c3aed, #06b6d4);
+}
+
+.horario-box h3 {
+  font-family: 'Rajdhani', sans-serif;
+  color: #d0d0f0;
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+  letter-spacing: 1px;
+}
+
+.horario-box p {
+  color: #8080b0;
+  margin-bottom: 4px;
+  font-size: 0.9rem;
+}
+
+.horario-hora {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 1.5rem !important;
+  font-weight: 700;
+  color: #a855f7 !important;
+  margin: 8px 0 4px !important;
+}
+
+.horario-zona {
+  color: #4a4a7a !important;
+  font-size: 0.8rem !important;
+}

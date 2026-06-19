@@ -1,0 +1,24 @@
+<nav class="navbar" *ngIf="showNav">
+  <div class="nav-brand">
+    <span class="brand-icon">🎮</span>
+    <span class="brand-name">GameZone</span>
+  </div>
+  <ul class="nav-links">
+    <li><a routerLink="/home" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" id="nav-inicio">Inicio</a></li>
+    <li><a routerLink="/juegos" routerLinkActive="active" id="nav-juegos">Juegos</a></li>
+    <li><a routerLink="/noticias" routerLinkActive="active" id="nav-noticias">Noticias</a></li>
+    <li><a routerLink="/contacto" routerLinkActive="active" id="nav-contacto">Contacto</a></li>
+  </ul>
+  <button class="btn-logout" id="btn-logout" (click)="logout()">
+    <span>🚪</span>
+    <span>Cerrar Sesión</span>
+  </button>
+</nav>
+
+<div class="contenido">
+  <router-outlet></router-outlet>
+</div>
+
+<footer class="footer" *ngIf="showNav">
+  <p>© 2025 GameZone &mdash; Tu portal de videojuegos</p>
+</footer>

@@ -1,0 +1,118 @@
+/* ===== NAVBAR ===== */
+.navbar {
+  background: linear-gradient(135deg, #0d0d1a 0%, #1a0a2e 50%, #0d1a0d 100%);
+  border-bottom: 2px solid #7c3aed;
+  padding: 0 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 70px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 4px 20px rgba(124, 58, 237, 0.3);
+}
+
+.nav-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.brand-icon {
+  font-size: 1.8rem;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+}
+
+.brand-name {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 1.8rem;
+  font-weight: 700;
+  background: linear-gradient(90deg, #a855f7, #06b6d4);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  letter-spacing: 2px;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 8px;
+}
+
+.nav-links li a {
+  font-family: 'Exo 2', sans-serif;
+  color: #a0a0c0;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+  padding: 8px 20px;
+  border-radius: 6px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+  border: 1px solid transparent;
+}
+
+.nav-links li a:hover {
+  color: #ffffff;
+  background: rgba(124, 58, 237, 0.2);
+  border-color: rgba(124, 58, 237, 0.5);
+  box-shadow: 0 0 12px rgba(124, 58, 237, 0.4);
+  transform: translateY(-2px);
+}
+
+.nav-links li a.active {
+  color: #ffffff;
+  background: linear-gradient(135deg, #7c3aed, #06b6d4);
+  border-color: transparent;
+  box-shadow: 0 0 16px rgba(124, 58, 237, 0.6);
+}
+
+/* ===== CONTENIDO ===== */
+.contenido {
+  min-height: calc(100vh - 130px);
+}
+
+/* ===== FOOTER ===== */
+.footer {
+  background: #0d0d1a;
+  border-top: 1px solid #1e1e3a;
+  text-align: center;
+  padding: 15px;
+  color: #4a4a6a;
+  font-size: 0.85rem;
+  letter-spacing: 1px;
+}
+
+/* ===== BOTÓN LOGOUT ===== */
+.btn-logout {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(239, 68, 68, 0.1);
+  border: 1px solid rgba(239, 68, 68, 0.35);
+  color: #f87171;
+  padding: 8px 18px;
+  border-radius: 8px;
+  font-family: 'Exo 2', sans-serif;
+  font-size: 0.88rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-logout:hover {
+  background: rgba(239, 68, 68, 0.22);
+  border-color: rgba(239, 68, 68, 0.6);
+  color: #ffffff;
+  box-shadow: 0 0 12px rgba(239, 68, 68, 0.3);
+  transform: translateY(-1px);
+}

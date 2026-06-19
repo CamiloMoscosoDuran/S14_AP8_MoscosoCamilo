@@ -1,0 +1,128 @@
+<div class="login-page">
+
+  <!-- Partículas de fondo -->
+  <div class="particles">
+    <span class="particle"></span>
+    <span class="particle"></span>
+    <span class="particle"></span>
+    <span class="particle"></span>
+    <span class="particle"></span>
+  </div>
+
+  <div class="login-wrapper">
+
+    <!-- Panel izquierdo decorativo -->
+    <div class="login-hero">
+      <div class="hero-content">
+        <div class="logo-area">
+          <span class="logo-icon">🎮</span>
+          <h1 class="logo-text">GameZone</h1>
+        </div>
+        <p class="hero-tagline">Tu portal definitivo de videojuegos</p>
+        <div class="hero-features">
+          <div class="feature-item">
+            <span>⚔️</span>
+            <span>500+ Juegos disponibles</span>
+          </div>
+          <div class="feature-item">
+            <span>🏆</span>
+            <span>Torneos y competencias</span>
+          </div>
+          <div class="feature-item">
+            <span>📰</span>
+            <span>Noticias gamer diarias</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Panel derecho con el formulario -->
+    <div class="login-card">
+      <div class="card-header">
+        <h2 id="login-title">Iniciar Sesión</h2>
+        <p class="card-subtitle">Accede a tu cuenta GameZone</p>
+      </div>
+
+      <form [formGroup]="loginForm" (ngSubmit)="login()" class="login-form" id="login-form" novalidate>
+
+        <!-- Campo Email -->
+        <div class="form-group" [class.has-error]="email?.touched && email?.invalid">
+          <label for="email-input">Correo electrónico</label>
+          <div class="input-wrapper">
+            <span class="input-icon">✉️</span>
+            <input
+              id="email-input"
+              type="email"
+              formControlName="email"
+              placeholder="admin@gamezone.com"
+              autocomplete="email"
+            >
+          </div>
+          <!-- Mensajes de error del email -->
+          <div class="error-messages" *ngIf="email?.touched && email?.invalid">
+            <small *ngIf="email?.errors?.['required']" id="email-required-error">
+              ⚠️ El correo es obligatorio
+            </small>
+            <small *ngIf="email?.errors?.['email']" id="email-format-error">
+              ⚠️ Formato de correo inválido
+            </small>
+          </div>
+        </div>
+
+        <!-- Campo Contraseña -->
+        <div class="form-group" [class.has-error]="password?.touched && password?.invalid">
+          <label for="password-input">Contraseña</label>
+          <div class="input-wrapper">
+            <span class="input-icon">🔒</span>
+            <input
+              id="password-input"
+              [type]="showPassword ? 'text' : 'password'"
+              formControlName="password"
+              placeholder="Mínimo 6 caracteres"
+              autocomplete="current-password"
+            >
+            <button type="button" class="toggle-password" (click)="togglePassword()" id="toggle-password-btn">
+              {{ showPassword ? '🙈' : '👁️' }}
+            </button>
+          </div>
+          <!-- Mensajes de error de contraseña -->
+          <div class="error-messages" *ngIf="password?.touched && password?.invalid">
+            <small *ngIf="password?.errors?.['required']" id="password-required-error">
+              ⚠️ La contraseña es obligatoria
+            </small>
+            <small *ngIf="password?.errors?.['minlength']" id="password-minlength-error">
+              ⚠️ La contraseña debe tener mínimo 6 caracteres
+            </small>
+          </div>
+        </div>
+
+        <!-- Mensaje de error general (credenciales incorrectas) -->
+        <div class="alert-error" *ngIf="errorMessage" id="login-error-message">
+          {{ errorMessage }}
+        </div>
+
+        <!-- Credenciales de prueba -->
+        <div class="hint-box">
+          <span class="hint-icon">💡</span>
+          <div>
+            <strong>Credenciales de prueba:</strong>
+            <span>admin&#64;gamezone.com / 123456</span>
+          </div>
+        </div>
+
+        <!-- Botón submit -->
+        <button
+          type="submit"
+          class="btn-login"
+          id="btn-submit-login"
+          [disabled]="loginForm.invalid"
+        >
+          <span>Iniciar Sesión</span>
+          <span class="btn-arrow">→</span>
+        </button>
+
+      </form>
+    </div>
+
+  </div>
+</div>

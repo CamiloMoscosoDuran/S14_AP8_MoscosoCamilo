@@ -1,0 +1,38 @@
+<div class="juegos-page">
+
+  <!-- HEADER -->
+  <div class="page-header" id="juegos-header">
+    <h1 class="page-title">Juegos</h1>
+    <p class="page-subtitle">Explora nuestra selección de los mejores videojuegos</p>
+  </div>
+
+  <!-- FILTROS -->
+  <div class="filtros-bar" id="filtros-bar">
+    <button class="filtro-btn" [class.activo]="filtroActual === 'Todos'" (click)="setFiltro('Todos')">Todos</button>
+    <button class="filtro-btn" [class.activo]="filtroActual === 'Acción'" (click)="setFiltro('Acción')">Acción</button>
+    <button class="filtro-btn" [class.activo]="filtroActual === 'Deportes'" (click)="setFiltro('Deportes')">Deportes</button>
+    <button class="filtro-btn" [class.activo]="filtroActual === 'Lucha'" (click)="setFiltro('Lucha')">Lucha</button>
+    <button class="filtro-btn" [class.activo]="filtroActual === 'Shooter'" (click)="setFiltro('Shooter')">Shooter</button>
+  </div>
+
+  <!-- GRID DE JUEGOS -->
+  <div class="juegos-grid" id="juegos-grid">
+    @for (juego of juegosFiltrados; track juego.id) {
+      <div class="juego-card">
+        <div class="juego-banner">
+          <img [src]="juego.imagen" [alt]="juego.nombre">
+        </div>
+        <div class="juego-info">
+          <span class="juego-genero" [ngClass]="juego.genero.split(' ')[0].toLowerCase()">{{ juego.genero }}</span>
+          <h3 class="juego-nombre">{{ juego.nombre }}</h3>
+          <p class="juego-desc">{{ juego.desc }}</p>
+          <div class="juego-meta">
+            <span class="juego-rating">Rating: {{ juego.rating }}</span>
+          </div>
+        </div>
+      </div>
+    } @empty {
+      <p style="padding: 20px;">No hay juegos en esta categoría.</p>
+    }
+  </div>
+</div>
