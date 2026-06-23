@@ -24,7 +24,7 @@ FROM nginx:stable-alpine
 
 # Copy compiled Angular output from build stage
 # IMPORTANTE: Cambia "games" por el nombre de tu proyecto
-COPY --from=build /app/dist/games /usr/share/nginx/html
+COPY --from=build /app/dist/games/browser /usr/share/nginx/html
 
 # Replace default Nginx config with custom SPA config
 COPY nginx.conf /etc/nginx/conf.d/default.conf
